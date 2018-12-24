@@ -64,7 +64,7 @@ const QVariantList& PX4AutoPilotPlugin::vehicleComponents(void)
             if (_vehicle->parameterManager()->parametersReady()) {
                 _airframeComponent = new AirframeComponent(_vehicle, this);
                 _airframeComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_airframeComponent));
+                ///_components.append(QVariant::fromValue((VehicleComponent*)_airframeComponent));
 
                 if (!_vehicle->hilMode()) {
                     _sensorsComponent = new SensorsComponent(_vehicle, this);
@@ -74,15 +74,15 @@ const QVariantList& PX4AutoPilotPlugin::vehicleComponents(void)
 
                 _radioComponent = new PX4RadioComponent(_vehicle, this);
                 _radioComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_radioComponent));
+                ///_components.append(QVariant::fromValue((VehicleComponent*)_radioComponent));
 
                 _flightModesComponent = new FlightModesComponent(_vehicle, this);
                 _flightModesComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_flightModesComponent));
+                ///_components.append(QVariant::fromValue((VehicleComponent*)_flightModesComponent));
 
                 _powerComponent = new PowerComponent(_vehicle, this);
                 _powerComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_powerComponent));
+                ///_components.append(QVariant::fromValue((VehicleComponent*)_powerComponent));
 
 #if 0
                 // Coming soon
@@ -93,11 +93,11 @@ const QVariantList& PX4AutoPilotPlugin::vehicleComponents(void)
 
                 _safetyComponent = new SafetyComponent(_vehicle, this);
                 _safetyComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_safetyComponent));
+                //_components.append(QVariant::fromValue((VehicleComponent*)_safetyComponent));
 
                 _tuningComponent = new PX4TuningComponent(_vehicle, this);
                 _tuningComponent->setupTriggerSignals();
-                _components.append(QVariant::fromValue((VehicleComponent*)_tuningComponent));
+                ///_components.append(QVariant::fromValue((VehicleComponent*)_tuningComponent));
 
                 //-- Is there support for cameras?
                 if(_vehicle->parameterManager()->parameterExists(_vehicle->id(), "TRIG_MODE")) {
