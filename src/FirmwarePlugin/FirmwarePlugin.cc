@@ -353,6 +353,18 @@ const QVariantList& FirmwarePlugin::cameraList(const Vehicle* vehicle)
 
     if (_cameraList.size() == 0) {
         CameraMetaData* metaData;
+        
+        metaData = new CameraMetaData(tr("MAPIR Survey3N 12MP"),
+                                      6.20,     // sensorWidth
+                                      4.65,     // sendsorHeight
+                                      4000,     // imageWidth
+                                      3000,     // imageHeight
+                                      8.25,     // focalLength
+                                      true,     // landscape
+                                      false,    // fixedOrientation
+                                      1,        // minTriggerInterval
+                                      this);
+        _cameraList.append(QVariant::fromValue(metaData));
 
         metaData = new CameraMetaData(tr("Sony NEX-5R 20mm"),  //http://www.sony.co.uk/electronics/interchangeable-lens-cameras/ilce-qx1-body-kit/specifications
                                       23.2,                 //http://www.sony.com/electronics/camera-lenses/sel16f28/specifications
